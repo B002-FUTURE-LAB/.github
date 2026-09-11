@@ -6,34 +6,34 @@
 </p>
 
 <p align="center">
-  <b>Uma base móvel e um braço, trabalhando no mesmo mapa.</b><br>
-  Robótica aplicada no laboratório B002 — ROS 2 Jazzy, navegação autônoma e manipulação.
+  <b>A mobile base and an arm, working in the same map.</b><br>
+  Applied robotics in lab B002 — ROS 2 Jazzy, autonomous navigation and manipulation.
 </p>
 
 ---
 
-## O que rola aqui
+## What happens here
 
-O B002 é um laboratório com dois robôs reais e um problema interessante: fazer
-os dois se entenderem. Um **TurtleBot4** navega sozinho pelo mapa da sala; um
-**MyCobot** faz pick & place com visão. Sozinhos, cada um é um tutorial. Juntos,
-compartilhando o mesmo sistema de coordenadas e a mesma visualização 3D, viram
-uma célula de trabalho — e é aí que está o trabalho de verdade.
+B002 is a lab with two real robots and one interesting problem: getting them to
+understand each other. A **TurtleBot4** navigates the room's map on its own; a
+**MyCobot** does pick & place with vision. Apart, each one is a tutorial.
+Together — sharing one coordinate frame and one 3D view — they become a work
+cell, and that's where the actual work is.
 
-Tudo roda em hardware físico, não só em simulação. Dock/undock, RPLidar, OAK-D,
-Wi-Fi instável e sensores que demoram a voltar depois do undock fazem parte do
-escopo.
+All of it runs on physical hardware, not just in simulation. Dock/undock,
+RPLidar, OAK-D, flaky Wi-Fi and sensors that take their time coming back after
+an undock are all part of the scope.
 
-## Os três sistemas
+## The three systems
 
-| | O que faz | Stack |
+| | What it does | Stack |
 |---|---|---|
-| 🟢 **TurtleBot4** | navega autônomo pelo mapa do B002, com rotina de delivery por waypoints | ROS 2 Jazzy, Nav2, AMCL, RPLidar, OAK-D |
-| 🦾 **MyCobot** | planeja e executa movimentos do braço; pick & place com detecção por visão e bomba de vácuo | MoveIt, Docker, YOLO, GPIO |
-| 🧩 **Integração** | ancora o braço no mapa (`map → mycobot_base_link`), faz a ponte de juntas e desenha os dois no mesmo RViz 3D | ROS 2, TF2, RViz |
+| 🟢 **TurtleBot4** | navigates the B002 map autonomously, with a waypoint delivery routine | ROS 2 Jazzy, Nav2, AMCL, RPLidar, OAK-D |
+| 🦾 **MyCobot** | plans and executes arm motion; pick & place with vision-based detection and a suction pump | MoveIt, Docker, YOLO, GPIO |
+| 🧩 **Integration** | anchors the arm in the map (`map → mycobot_base_link`), bridges the joints, and draws both robots in one RViz 3D view | ROS 2, TF2, RViz |
 
-Os três andam juntos como submódulos no repositório agregador — é lá que fica
-registrado qual versão de cada um funciona com qual:
+The three move together as submodules in the aggregator repository — that's
+where it's recorded which version of each one works with which:
 
 ### 👉 [**B002_Future_Lab_Bots**](https://github.com/MHC-CodeSmith/B002_Future_Lab_Bots)
 
@@ -41,21 +41,22 @@ registrado qual versão de cada um funciona com qual:
 git clone --recurse-submodules https://github.com/MHC-CodeSmith/B002_Future_Lab_Bots.git
 ```
 
-O README de lá tem o passo a passo de operação: as três janelas do Terminator,
-a ordem de subir localização → Nav2 → visualização, e o mission manager.
+Its README carries the operating walkthrough: the three Terminator windows, the
+order to bring things up (localization → Nav2 → visualization), and the mission
+manager.
 
-## Identidade visual
+## Brand assets
 
-Logo, ícone, paleta e regras de uso vivem em [**Img**](https://github.com/B002-FUTURE-LAB/Img)
-— um lugar só, pra não espalhar cópia solta de logo por aí.
+Logo, icon, palette and usage rules live in [**Img**](https://github.com/B002-FUTURE-LAB/Img)
+— one place, so loose copies of the logo don't end up scattered everywhere.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/B002-FUTURE-LAB/Img/main/png/icon-128.png" alt="Símbolo" width="72">
+  <img src="https://raw.githubusercontent.com/B002-FUTURE-LAB/Img/main/png/icon-128.png" alt="Symbol" width="72">
 </p>
 
 <p align="center">
-  <sub>O símbolo é o laboratório inteiro: o círculo é o TurtleBot4 visto de cima com o LIDAR no eixo,<br>
-  os dois segmentos são o braço do MyCobot, e o ponto verde é o efetuador.</sub>
+  <sub>The symbol is the whole lab: the circle is the TurtleBot4 seen from above with the LIDAR on its axis,<br>
+  the two segments are the MyCobot arm, and the green dot is the end effector.</sub>
 </p>
 
 ---
